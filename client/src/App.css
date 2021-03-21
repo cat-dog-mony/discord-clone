@@ -1,0 +1,22 @@
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.navbar {
+  width: 120px;
+  border: 1px solid black;
+}
+.leftmenu {
+  width: 300px;
+  border: 1px solid black;
+}
+.chat {
+  flex-grow: 1;
+  border: 1px solid black;
+}
+.rightmenu {
+  width: 300px;
+  border: 1px solid black;
+}
