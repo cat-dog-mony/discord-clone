@@ -7,7 +7,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+:root {
+  --border-color: gray;
+  --border: solid 0.1em var(--border-color);
+  --navbar-bg-color: #242628;
+  --leftmenu-bg-color: #353741;
+  --rightmenu-bg-color: var(--leftmenu-bg-color);
+  --chat-bg-color: #414348;
+}
+
+ul {
+  list-style-type: none;
 }
