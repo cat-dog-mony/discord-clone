@@ -1,0 +1,5 @@
+.navbar {
+  width: 120px;
+  border: 1px solid black;
+  background-color: var(--navbar-bg-color);
+}
