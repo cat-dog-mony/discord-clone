@@ -1,7 +1,7 @@
 import React from "react";
-import { BiChevronDown, BiX } from "react-icons/bi";
+import { BiX, BiChevronDown } from "react-icons/bi";
 
-import "./LeftMenu.css";
+import "./LeftMenuTitleBar.css";
 
 interface IProps {
   isShowTitleMenu: boolean;
@@ -21,7 +21,7 @@ const LeftMenuTitleBar: React.FC<IProps> = ({
     <div className="title-container" onClick={handleClickTitleMenu}>
       <div className="title">Server Name</div>
       <div className="title-icon">
-        {isShowTitleMenu ? <BiChevronDown /> : <BiX />}
+        {isShowTitleMenu ? <BiX /> : <BiChevronDown />}
       </div>
     </div>
   );

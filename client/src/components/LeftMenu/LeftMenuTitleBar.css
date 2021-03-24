@@ -4,7 +4,7 @@
   flex-direction: row;
   align-items: center;
   height: 70px;
-  padding: 0 20px;
+  padding: 0 15px;
   box-shadow: 0 1px 0 rgba(4, 4, 5, 0.2), 0 1.5px 0 rgba(6, 6, 7, 0.05),
     0 2px 0 rgba(4, 4, 5, 0.05);
 }
@@ -17,10 +17,18 @@
   font-weight: bold;
 }
 
+.title-icon-box {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border: 1px solid red;
+}
+
 .title-icon {
-  font-size: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
   color: white;
-  width: 30px;
-  height: 30px;
-  margin-left: 10px;
 }
