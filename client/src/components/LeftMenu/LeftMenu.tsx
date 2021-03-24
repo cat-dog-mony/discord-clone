@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import LeftMenuTitleBar from "./LeftMenuTitleBar";
+import ChannelContainer from "./ChannelContainer";
+
 import "./LeftMenu.css";
 
 const LeftMenu = () => {
-  return <div className="leftmenu"></div>;
+  const [isShowTitleMenu, setIsShowTitleMenu] = useState(false);
+
+  return (
+    <div className="leftmenu">
+      <LeftMenuTitleBar
+        isShowTitleMenu={isShowTitleMenu}
+        setIsShowTitleMenu={setIsShowTitleMenu}
+      />
+      <ChannelContainer />
+    </div>
+  );
 };
 
 export default LeftMenu;

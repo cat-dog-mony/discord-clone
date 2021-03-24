@@ -10,12 +10,14 @@ body {
 :root {
   --border-color: gray;
   --border: solid 0.1em var(--border-color);
-  --navbar-bg-color: #242628;
-  --leftmenu-bg-color: #353741;
+  --navbar-bg-color: #181a1c;
+  --leftmenu-bg-color: #232529;
   --rightmenu-bg-color: var(--leftmenu-bg-color);
-  --chat-bg-color: #414348;
+  --chat-bg-color: #292b30;
 }
 
 ul {
+  margin: 0px;
+  padding: 0px;
   list-style-type: none;
 }
