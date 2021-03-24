@@ -62,22 +62,27 @@ const LeftMenu = () => {
         <span>채팅 채널</span>
         <BiPlus className="channel-plus-btn" />
       </div>
+
       <ul className="channel-list">
         {channels.map((channel, idx) => {
           const { name } = channel;
           const isSelected = name === currentChannelName;
-          if (isExpandChannels && !isSelected) return null;
-          return (
-            <li
-              className={`channel-item ${isSelected ? "selected" : ""}`}
-              onClick={() => selectChannel(name)}
-            >
-              <BiCube />
-              <div className="channel-item-name">{name}</div>
-              <BiUserPlus />
-              <BiCog />
-            </li>
-          );
+          if (isExpandChannels && !isSelected) {
+            return null;
+          } else {
+            return (
+              <li
+                key={idx}
+                className={`channel-item ${isSelected ? "selected" : ""}`}
+                onClick={() => selectChannel(name)}
+              >
+                <BiCube />
+                <div className="channel-item-name">{name}</div>
+                <BiUserPlus />
+                <BiCog />
+              </li>
+            );
+          }
         })}
       </ul>
     </div>
