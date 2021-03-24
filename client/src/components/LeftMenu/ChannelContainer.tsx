@@ -30,6 +30,7 @@ const ChannelContainer = () => {
   const selectChannel = (channel: string) => {
     setCurrenChannelName(channel);
   };
+
   return (
     <>
       <div
@@ -56,7 +57,7 @@ const ChannelContainer = () => {
             return (
               <Channel
                 key={idx}
-                isSelected
+                isSelected={isSelected}
                 name={name}
                 onSelectChannel={selectChannel}
               />
