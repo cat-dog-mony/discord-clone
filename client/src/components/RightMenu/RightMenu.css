@@ -1,4 +1,15 @@
 .rightmenu {
-  width: 300px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 40px 10px;
   background-color: var(--rightmenu-bg-color);
+}
+
+.user-list-label {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin-left: 10px;
 }
