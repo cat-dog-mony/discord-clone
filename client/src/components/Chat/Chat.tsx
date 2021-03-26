@@ -1,39 +1,47 @@
 import React from "react";
-import { IconContext } from "react-icons";
-import { BiHash, BiUserCircle, BiSmile } from "react-icons/bi";
+import HeaderBar from "./HeaderBar"
+import { Message } from "../../models/Message";
+import { User } from "../../models/User";
 import "./Chat.css";
+import InputWrapper from "./InputWrapper";
+import MessageWrapper from "./MessageWrapper";
 
 const CHAT_ENDPOINT = 'http://localhost:5000/';
 let socket;
 
 // dummy user
-const user = {
+const user: User = {
   id: 1,
   name: "Test User1",
   online: true,
-}
+};
 
 // dummy message
-const messages = [
+const messages: Message[] = [
   {
     id: 1,
-    userId: 1,
-    message: "this is test message",
+    user: user,
+    content: "this is test message",
+    isFirst: true,
+    timestamp: "2021-03-27"
   },
   {
     id: 2,
-    userId: 1,
-    message: "this is test message. And Long message. kslnflnf sdnsdkl nsdafklsdakfl dffn",
+    user: user,
+    content: "this is test message. And Long message. kslnflnf sdnsdkl nsdafklsdakfl dffn",
+    isFirst: false,
   },
   {
     id: 3,
-    userId: 1,
-    message: "this is test message 3",
+    user: user,
+    content: "this is test message 3",
+    isFirst: false,
   },
   {
     id: 4,
-    userId: 2,
-    message: "this is test message 3 sklfdnsf sd from other user",
+    user: user,
+    content: "this is test message 3 sklfdnsf sd from other user",
+    isFirst: false,
   },
 ]
 
@@ -47,68 +55,12 @@ const Chat = () => {
     // TODO: move it to higher level of component
     <div className="centerContainer">
       <div className="container">
-        <div className="headerBarContainer">
-          <div className="chatTitle">
-            <IconContext.Provider
-              value={{ className: 'chatHashtag' }}
-            >
-              <BiHash />
-            </IconContext.Provider>
-            <div className="chatTitleText">
-              { room.name }
-            </div>
-          </div>
-        </div>
-
+        <HeaderBar name={room.name}/>
         <div className="chatContainer">
-
-          <div className="messageWrapper">
-            <div className="scroller">
-              <div className="message">
-                <div className="profile">
-                  <BiUserCircle />
-                </div>
-                <div className="userinfo">
-                  <div className="username">
-                    seul
-                  </div>
-                  <div className="dateInfo">
-                    03/20/2021
-                  </div>
-                </div>
-
-                <div className="messageContent">
-                  test message
-                </div>
-              </div>
-              <div className="message">
-                <div className="messageContent">
-                  test messagesndf kl nadklfasdkf ndasf nsdakl fnsdaklf skdlf nsdaklf nsdklfs
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div className="inputWrapper">
-            <div className="inputBox">
-              <div className="innerInput">
-                <div className="textArea">
-                  <input className="chatInput" placeholder="Message #general"/>
-                </div>
-                <div className="imojiArea">
-                  <IconContext.Provider
-                    value={{ className: 'smileEmoji' }}
-                  >
-                    <BiSmile />
-                  </IconContext.Provider>
-                </div>
-              </div>
-            </div>
-          </div>
+          <MessageWrapper messages={messages} />
+          <InputWrapper />
         </div>
       </div>
-    
     </div>
   )
 };
