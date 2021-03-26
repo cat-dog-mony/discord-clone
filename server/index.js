@@ -1,5 +1,4 @@
 const express = require("express");
-const mongodb = require("./db/mongoose");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
@@ -14,7 +13,8 @@ const corsOptions = {
   credentials: true,
 };
 
-mongodb();
+const mongodbConnect = require("./models/index");
+mongodbConnect();
 
 app.use(morgan("dev"));
 app.use(cors(corsOptions));
