@@ -1,5 +1,175 @@
-.chat {
+.centerContainer {
   width: 100px;
   flex-grow: 1;
   background-color: var(--chat-bg-color);
+}
+.container {
+  height: 100vh;
+  background-color: var(--chat-bg-color);
+  display: flex;
+  flex-direction: column;
+}
+
+/* header bar */
+.headerBarContainer {
+  height: 70px;
+  box-shadow: 0 1px 0 rgba(4, 4, 5, 0.2), 0 1.5px 0 rgba(6, 6, 7, 0.05),
+    0 2px 0 rgba(4, 4, 5, 0.05);
+  padding: 0 15px;
+  display: flex;
+}
+
+.chatTitle {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* chat */
+.chatContainer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* chat -> message */
+.messageWrapper {
+  flex-grow: 100;
+  position: relative;
+  flex-shrink: 10;
+}
+
+/* chat -> input */
+.inputWrapper {
+  position: relative;
+  padding: 0 16px;
+  margin-top: -8px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  position: relative;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.chatTitle {
+  display: flex;
+}
+
+.chatHashtag {
+  display: inline;
+  font-size: 1.5rem;
+  color: grey;
+  padding: 0 10px 0 0;
+}
+
+.chatTitleText {
+  display: inline;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.message {
+  position: relative;
+  word-wrap: break-word;
+  user-select: text;
+  color: white;
+  padding-left: 70px;
+  padding-right: 50px;
+  padding-top: .125rem;
+  padding-bottom: .125rem;
+}
+
+.profile {
+  font-size: 2.5rem;
+  position: absolute;
+  left: 16px;
+  margin-top: calc(4px - .125rem);
+  border-radius: 50%;
+  cursor: pointer;
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.userinfo {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  line-height: 1.375rem;
+  min-height: 1.375rem;
+}
+
+.username {
+  margin-right: .25rem;
+  font-weight: bold;
+  display: inline;
+}
+
+.dateInfo {
+  font-size: 0.5rem;
+  line-height: 1.375rem;
+  color: grey;
+  vertical-align: baseline;
+  margin-left: .25rem;
+  display: inline;
+}
+
+.messageContent {
+  margin-left: -72px;
+  padding-left: 72px;
+  line-height: 1.375rem;
+}
+
+.inputBox {
+  margin-bottom: 24px;  
+  background-color: var(--chat-bg-color);
+  border-radius: 8px;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.innerInput {
+  padding-left: 16px;  
+  display: flex;
+  align-items: flex-center;
+  position: relative;
+  background-color: var(--chat-input-bg-color);
+  min-height: 2.5vh;
+}
+
+.textArea {
+  vertical-align: middle;
+  flex: 8;
+  display: flex;
+}
+
+/* TODO: change to div for multi-line input if possible */
+.chatInput {
+  background-color: var(--chat-input-bg-color);
+  -webkit-appearance: none !important;
+  box-shadow : none;  
+  border: none;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  color: white;
+  flex-grow: 1;
+}
+
+.chatInput:focus {
+  outline: none;
+}
+
+.imojiArea {
+  flex: 1;
+}
+
+.smileEmoji {
+  font-size: 2rem;
+  transform: scale(1);
+  filter: grayscale(100%);
+  color: #cfcfcf;
 }

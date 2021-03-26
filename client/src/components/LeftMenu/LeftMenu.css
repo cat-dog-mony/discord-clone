@@ -1,4 +1,4 @@
 .leftmenu {
-  width: 300px;
+  max-width: 300px;
   background-color: var(--leftmenu-bg-color);
 }
