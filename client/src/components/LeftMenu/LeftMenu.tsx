@@ -3,17 +3,36 @@ import LeftMenuTitleBar from "./LeftMenuTitleBar";
 import ChannelContainer from "./ChannelContainer";
 
 import "./LeftMenu.css";
+import { BiUserPlus } from "react-icons/bi";
 
 const LeftMenu = () => {
-  const [isShowTitleMenu, setIsShowTitleMenu] = useState(false);
+  const [isShowPopup, setIsShowPopup] = useState(false);
 
   return (
     <div className="leftmenu">
       <LeftMenuTitleBar
-        isShowTitleMenu={isShowTitleMenu}
-        setIsShowTitleMenu={setIsShowTitleMenu}
+        isShowPopup={isShowPopup}
+        setIsShowPopup={setIsShowPopup}
       />
-      <ChannelContainer />
+      <div className="leftmenu-content-container">
+        <ChannelContainer />
+        <div className={`leftmenu-popup ${isShowPopup ? "visible" : ""}`}>
+          <ul className="popup-item-list">
+            <li className="popup-item">
+              <span className="popup-item-label">초대하기</span>
+              <BiUserPlus className="popup-item-icon" />
+            </li>
+            <li className="popup-item">
+              <span className="popup-item-label">채널 만들기</span>
+              <BiUserPlus className="popup-item-icon" />
+            </li>
+            <li className="popup-item">
+              <span className="popup-item-label">서버 설정</span>
+              <BiUserPlus className="popup-item-icon" />
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

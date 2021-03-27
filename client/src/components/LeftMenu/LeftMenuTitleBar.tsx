@@ -4,24 +4,24 @@ import { BiX, BiChevronDown } from "react-icons/bi";
 import "./LeftMenuTitleBar.css";
 
 interface IProps {
-  isShowTitleMenu: boolean;
-  setIsShowTitleMenu: (flag: boolean) => void;
+  isShowPopup: boolean;
+  setIsShowPopup: (flag: boolean) => void;
 }
 
 const LeftMenuTitleBar: React.FC<IProps> = ({
-  isShowTitleMenu,
-  setIsShowTitleMenu,
+  isShowPopup,
+  setIsShowPopup,
 }) => {
   const handleClickTitleMenu = (e: React.MouseEvent) => {
     e.preventDefault();
-    setIsShowTitleMenu(!isShowTitleMenu);
+    setIsShowPopup(!isShowPopup);
   };
 
   return (
-    <div className="title-container" onClick={handleClickTitleMenu}>
+    <div className="lefmenu-title-container" onClick={handleClickTitleMenu}>
       <div className="title">Server Name</div>
       <div className="title-icon">
-        {isShowTitleMenu ? <BiX /> : <BiChevronDown />}
+        {isShowPopup ? <BiX /> : <BiChevronDown />}
       </div>
     </div>
   );
