@@ -1,6 +1,7 @@
 import React from "react";
 import { BiUserCircle } from "react-icons/bi";
 import { Message } from "../../models/Message";
+import "./MessageComponent.css"
 
 
 const MessageComponent: React.FC<Message> = (props: Message) => {
@@ -15,13 +16,13 @@ const MessageComponent: React.FC<Message> = (props: Message) => {
             <div className="username">
               {props.user.name}
             </div>
-            <div className="dateInfo">
+            <div className="date-info">
               {props.timestamp}
             </div>
           </div>
         </>
       }
-      <div className="messageContent">
+      <div className="message-context">
         {props.content}
       </div>
     </div>

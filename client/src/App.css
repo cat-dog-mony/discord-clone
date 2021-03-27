@@ -3,26 +3,3 @@
   flex-direction: row;
   height: 100vh;
 }
-
-/* TODO: remove important and merge with other css */
-/* For fix grow when screen shrink */
-.navbar {
-  flex-grow: 1 !important;
-  flex-shrink: 1 !important;
-}
-
-.leftmenu {
-  flex-grow: 3 !important;
-  flex-shrink: 3 !important;
-}
-
-/* TODO: add justify-content and align-items for only remain chat after shrink below specific size */
-.centerContainer {
-  flex-grow: 30 !important;
-  flex-shrink: 30 !important;
-}
-
-.rightmenu {
-  flex-grow: 3 !important;
-  flex-shrink: 3 !important;
-}

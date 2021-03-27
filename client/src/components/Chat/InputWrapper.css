@@ -1,0 +1,63 @@
+.input-wrapper {
+  position: relative;
+  padding: 0 16px;
+  margin-top: -8px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  position: relative;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.input-box {
+  margin-bottom: 24px;  
+  background-color: var(--chat-bg-color);
+  border-radius: 8px;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.inner-input {
+  padding-left: 16px;  
+  display: flex;
+  align-items: flex-center;
+  position: relative;
+  background-color: var(--chat-input-bg-color);
+  min-height: 2.5vh;
+}
+
+.text-area {
+  vertical-align: middle;
+  flex: 8;
+  display: flex;
+}
+
+/* TODO: change to div for multi-line input if possible */
+.chat-input {
+  background-color: var(--chat-input-bg-color);
+  -webkit-appearance: none !important;
+  box-shadow : none;  
+  border: none;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  color: white;
+  flex-grow: 1;
+}
+
+.chat-input:focus {
+  outline: none;
+}
+
+.emoji-area {
+  flex: 1;
+}
+
+.smile-emoji {
+  font-size: 2rem;
+  transform: scale(1);
+  filter: grayscale(100%);
+  color: #cfcfcf;
+}

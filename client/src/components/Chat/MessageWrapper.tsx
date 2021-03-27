@@ -2,11 +2,12 @@ import React from "react";
 import { BiUserCircle } from "react-icons/bi";
 import { MessageProps } from "../../models/Message";
 import MessageComponent from "./MessageComponent";
+import "./MessageWrapper.css";
 
 
 const MessageWrapper: React.FC<MessageProps> = ({messages}: MessageProps) => {
   return (
-    <div className="messageWrapper">
+    <div className="message-wrapper">
       <div className="scroller">
         {messages.map(msg => {
           return (

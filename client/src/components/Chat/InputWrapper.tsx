@@ -1,18 +1,19 @@
 import React from "react";
 import { IconContext } from "react-icons";
 import { BiSmile } from "react-icons/bi";
+import "./InputWrapper.css"
 
 const InputWrapper = () => {
   return (
-    <div className="inputWrapper">
-      <div className="inputBox">
-        <div className="innerInput">
-          <div className="textArea">
-            <input className="chatInput" placeholder="Message #general"/>
+    <div className="input-wrapper">
+      <div className="input-box">
+        <div className="inner-input">
+          <div className="text-area">
+            <input className="chat-input" placeholder="Message #general"/>
           </div>
-          <div className="imojiArea">
+          <div className="emoji-area">
             <IconContext.Provider
-              value={{ className: 'smileEmoji' }}
+              value={{ className: 'smile-emoji' }}
             >
               <BiSmile />
             </IconContext.Provider>

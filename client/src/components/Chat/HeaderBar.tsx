@@ -1,6 +1,7 @@
 import React from "react";
 import { IconContext } from "react-icons";
 import { BiHash } from "react-icons/bi";
+import "./HeaderBar.css";
 
 
 interface IProps {
@@ -9,14 +10,14 @@ interface IProps {
 
 const HeaderBar: React.FC<IProps> = ({ name }) => {
   return (
-    <div className="headerBarContainer">
-      <div className="chatTitle">
+    <div className="header-bar-container">
+      <div className="chat-title">
         <IconContext.Provider
-          value={{ className: 'chatHashtag' }}
+          value={{ className: 'chat-hashtag' }}
         >
           <BiHash />
         </IconContext.Provider>
-        <div className="chatTitleText">
+        <div className="text">
           { name }
         </div>
       </div>

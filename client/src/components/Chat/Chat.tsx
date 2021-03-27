@@ -53,10 +53,10 @@ const room = {
 const Chat = () => {
   return (
     // TODO: move it to higher level of component
-    <div className="centerContainer">
+    <div className="center-container">
       <div className="container">
         <HeaderBar name={room.name}/>
-        <div className="chatContainer">
+        <div className="chat-container">
           <MessageWrapper messages={messages} />
           <InputWrapper />
         </div>
