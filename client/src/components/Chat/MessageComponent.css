@@ -5,15 +5,15 @@
   color: white;
   padding-left: 70px;
   padding-right: 50px;
-  padding-top: .125rem;
-  padding-bottom: .125rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
 }
 
 .profile {
   font-size: 2.5rem;
   position: absolute;
   left: 16px;
-  margin-top: calc(4px - .125rem);
+  margin-top: calc(4px - 0.125rem);
   border-radius: 50%;
   cursor: pointer;
   flex: 0 0 auto;
@@ -29,7 +29,7 @@
 }
 
 .username {
-  margin-right: .25rem;
+  margin-right: 0.25rem;
   font-weight: bold;
   display: inline;
 }
@@ -39,7 +39,7 @@
   line-height: 1.375rem;
   color: grey;
   vertical-align: baseline;
-  margin-left: .25rem;
+  margin-left: 0.25rem;
   display: inline;
 }
 

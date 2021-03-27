@@ -10,7 +10,7 @@
 }
 
 .input-box {
-  margin-bottom: 24px;  
+  margin-bottom: 24px;
   background-color: var(--chat-bg-color);
   border-radius: 8px;
   width: 100%;
@@ -20,7 +20,7 @@
 }
 
 .inner-input {
-  padding-left: 16px;  
+  padding-left: 16px;
   display: flex;
   align-items: flex-center;
   position: relative;
@@ -38,7 +38,7 @@
 .chat-input {
   background-color: var(--chat-input-bg-color);
   -webkit-appearance: none !important;
-  box-shadow : none;  
+  box-shadow: none;
   border: none;
   border-top-style: hidden;
   border-right-style: hidden;

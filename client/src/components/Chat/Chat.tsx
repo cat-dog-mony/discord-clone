@@ -1,12 +1,12 @@
 import React from "react";
-import HeaderBar from "./HeaderBar"
+import HeaderBar from "./HeaderBar";
 import { Message } from "../../models/Message";
 import { User } from "../../models/User";
 import "./Chat.css";
 import InputWrapper from "./InputWrapper";
 import MessageWrapper from "./MessageWrapper";
 
-const CHAT_ENDPOINT = 'http://localhost:5000/';
+const CHAT_ENDPOINT = "http://localhost:5000/";
 let socket;
 
 // dummy user
@@ -23,12 +23,13 @@ const messages: Message[] = [
     user: user,
     content: "this is test message",
     isFirst: true,
-    timestamp: "2021-03-27"
+    timestamp: "2021-03-27",
   },
   {
     id: 2,
     user: user,
-    content: "this is test message. And Long message. kslnflnf sdnsdkl nsdafklsdakfl dffn",
+    content:
+      "this is test message. And Long message. kslnflnf sdnsdkl nsdafklsdakfl dffn",
     isFirst: false,
   },
   {
@@ -43,26 +44,26 @@ const messages: Message[] = [
     content: "this is test message 3 sklfdnsf sd from other user",
     isFirst: false,
   },
-]
+];
 
 // dummy romm
 const room = {
-  name: '일반1',
-}
+  name: "일반1",
+};
 
 const Chat = () => {
   return (
     // TODO: move it to higher level of component
     <div className="center-container">
       <div className="container">
-        <HeaderBar name={room.name}/>
+        <HeaderBar name={room.name} />
         <div className="chat-container">
           <MessageWrapper messages={messages} />
           <InputWrapper />
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default Chat;
