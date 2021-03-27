@@ -1,0 +1,5 @@
+.message-wrapper {
+  flex-grow: 100;
+  position: relative;
+  flex-shrink: 10;
+}

@@ -1,5 +1,5 @@
 .navbar {
-  width: 100px;
+  max-width: 100px;
   height: 100vh;
   background-color: var(--navbar-bg-color);
   display: flex;
@@ -9,7 +9,7 @@
 }
 
 .item-seperator {
-  width: 40px;
+  max-width: 40px;
   height: 4px;
   border-radius: 20%;
   background-color: #343538;
