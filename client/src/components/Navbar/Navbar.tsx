@@ -1,6 +1,8 @@
 import React from "react";
-import "./Navbar.css";
+import styled from "styled-components";
+
 import NavItem from "./NavItem";
+import Seperator from "../Common/Seperator";
 
 const servers = [
   { name: "Cat" },
@@ -11,16 +13,26 @@ const servers = [
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <NavItem name="Home" img="./logo192.png" />
-      <span className="item-seperator" />
+    <NavigationBarContainer>
+      <NavItem name="Home" image="./logo192.png" />
+      <Seperator />
       {servers.map((server, idx) => (
         <NavItem key={idx} name={server.name} />
       ))}
-      {servers && <span className="item-seperator" />}
+      {servers && <Seperator />}
       <NavItem name="+" />
-    </nav>
+    </NavigationBarContainer>
   );
 };
+
+const NavigationBarContainer = styled.nav`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100px;
+  height: 100vh;
+  background-color: var(--navbar-bg-color);
+  overflow-y: scroll;
+`;
 
 export default Navbar;
