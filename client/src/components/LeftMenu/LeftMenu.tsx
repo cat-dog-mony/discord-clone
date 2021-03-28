@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import LeftMenuTitleBar from "./LeftMenuTitleBar";
-import ChannelContainer from "./ChannelContainer";
-
+import LeftMenuTitleBar from "./LeftMenuTopBar";
+import ChannelList from "./ChannelList";
 import LeftMenuPopup from "./LeftMenuPopup";
-import "./LeftMenu.css";
 
 const LeftMenu = () => {
   const [isShowPopup, setIsShowPopup] = useState(false);
@@ -17,7 +15,7 @@ const LeftMenu = () => {
         setIsShowPopup={setIsShowPopup}
       />
       <LeftMenuContentContainer>
-        <ChannelContainer />
+        <ChannelList />
         <LeftMenuPopup isShow={isShowPopup} />
       </LeftMenuContentContainer>
     </LeftMenuContainer>

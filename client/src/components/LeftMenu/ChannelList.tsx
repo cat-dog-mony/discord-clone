@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { BiPlus, BiChevronRight } from "react-icons/bi";
-import Channel from "./Channel";
+import styled from "styled-components";
 
-import "./ChannelContainer.css";
+import Channel from "./Channel";
 
 const mockChannels = [
   { name: "일반1" },
@@ -16,7 +16,7 @@ const mockChannels = [
   { name: "일반9" },
 ];
 
-const ChannelContainer = () => {
+const ChannelList = () => {
   const [isExpandChannels, setIsExpandChannels] = useState(false);
   const [currentChannelName, setCurrenChannelName] = useState(
     mockChannels[0].name
@@ -33,20 +33,17 @@ const ChannelContainer = () => {
 
   return (
     <>
-      <div
-        className="channel-section-header"
-        onClick={handleClickChannelSection}
-      >
-        <BiChevronRight
-          className={`channel-section-arrow ${
-            isExpandChannels ? "expanded" : ""
-          }`}
-        />
-        <span>채팅 채널</span>
-        <BiPlus className="channel-plus-btn" />
-      </div>
+      <SectionHeader onClick={handleClickChannelSection}>
+        <SectionExpandButton expand={isExpandChannels}>
+          <BiChevronRight />
+        </SectionExpandButton>
+        <SectionLabel>채팅 채널</SectionLabel>
+        <SectionChannelAddButton>
+          <BiPlus />
+        </SectionChannelAddButton>
+      </SectionHeader>
 
-      <ul className="channel-list">
+      <ul>
         {/* TODO: Change key property to channel name */}
         {mockChannels.map((channel, idx) => {
           const { name } = channel;
@@ -69,4 +66,37 @@ const ChannelContainer = () => {
   );
 };
 
-export default ChannelContainer;
+const SectionHeader = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 5px;
+  margin-right: 15px;
+  color: #73777d;
+`;
+
+interface SectionExpandButtonProps {
+  expand: boolean;
+}
+
+const SectionExpandButton = styled.div`
+  font-weight: lighter;
+  font-size: 20px;
+  transform: ${(prop: SectionExpandButtonProps) =>
+    prop.expand ? "rotate(0turn)" : "rotate(0.25turn)"};
+  transition: transform 0.3s ease-in-out;
+`;
+
+const SectionLabel = styled.div`
+  flex-grow: 1;
+  font-weight: bold;
+  font-size: 20px;
+`;
+
+const SectionChannelAddButton = styled.div`
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 30px;
+`;
+
+export default ChannelList;
