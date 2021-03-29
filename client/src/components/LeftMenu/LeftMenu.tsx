@@ -1,40 +1,37 @@
 import React, { useState } from "react";
-import LeftMenuTitleBar from "./LeftMenuTitleBar";
-import ChannelContainer from "./ChannelContainer";
+import styled from "styled-components";
 
-import "./LeftMenu.css";
-import { BiUserPlus } from "react-icons/bi";
+import LeftMenuTitleBar from "./LeftMenuTopBar";
+import ChannelList from "./ChannelList";
+import LeftMenuPopup from "./LeftMenuPopup";
 
 const LeftMenu = () => {
   const [isShowPopup, setIsShowPopup] = useState(false);
 
   return (
-    <div className="leftmenu">
+    <LeftMenuContainer>
       <LeftMenuTitleBar
         isShowPopup={isShowPopup}
         setIsShowPopup={setIsShowPopup}
       />
-      <div className="leftmenu-content-container">
-        <ChannelContainer />
-        <div className={`leftmenu-popup ${isShowPopup ? "visible" : ""}`}>
-          <ul className="popup-item-list">
-            <li className="popup-item">
-              <span className="popup-item-label">초대하기</span>
-              <BiUserPlus className="popup-item-icon" />
-            </li>
-            <li className="popup-item">
-              <span className="popup-item-label">채널 만들기</span>
-              <BiUserPlus className="popup-item-icon" />
-            </li>
-            <li className="popup-item">
-              <span className="popup-item-label">서버 설정</span>
-              <BiUserPlus className="popup-item-icon" />
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      <LeftMenuContentContainer>
+        <ChannelList />
+        <LeftMenuPopup isShow={isShowPopup} />
+      </LeftMenuContentContainer>
+    </LeftMenuContainer>
   );
 };
+
+const LeftMenuContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  background-color: var(--leftmenu-bg-color);
+`;
+
+const LeftMenuContentContainer = styled.div`
+  position: relative;
+  flex-grow: 1;
+`;
 
 export default LeftMenu;
