@@ -4,14 +4,14 @@ const {
   Types: { ObjectId },
 } = Schema;
 
-const roomSchema = new Schema({
+const serverSchema = new Schema({
   user: {
     type: ObjectId,
     required: true,
     ref: "User",
   },
-  title: { String, maxlegnth: 20 },
-  image: String,
+  name: { String, maxlegnth: 20 },
+  invitationCode: String,
 });
 
-module.exports = mongoose.model("Chat", roomSchema);
+module.exports = mongoose.model("Server", serverSchema);
