@@ -55,26 +55,19 @@ const Chat = () => {
   return (
     // TODO: move it to higher level of component
     <CenterContainerDiv>
-      <InnerContainerDiv>
-        <HeaderBar name={room.name} />
-        <ChatContainerDiv>
-          <MessageWrapper messages={messages} />
-          <InputWrapper />
-        </ChatContainerDiv>
-      </InnerContainerDiv>
+      <HeaderBar name={room.name} />
+      <ChatContainerDiv>
+        <MessageWrapper messages={messages} />
+        <InputWrapper />
+      </ChatContainerDiv>
     </CenterContainerDiv>
   );
 };
 
 const CenterContainerDiv = styled.div`
-  width: 100px;
   flex-grow: 1;
   background-color: var(--chat-bg-color);
-`;
-
-const InnerContainerDiv = styled.div`
   height: 100vh;
-  background-color: var(--chat-bg-color);
   display: flex;
   flex-direction: column;
 `;

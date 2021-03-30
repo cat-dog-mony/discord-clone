@@ -29,7 +29,6 @@ const InputBoxWrapperDiv = styled.div`
   margin-top: -8px;
   flex-grow: 1;
   flex-shrink: 0;
-  position: relative;
   padding-left: 16px;
   padding-right: 16px;
 `;

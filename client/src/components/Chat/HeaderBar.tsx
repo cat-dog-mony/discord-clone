@@ -1,5 +1,4 @@
 import React from "react";
-import { IconContext } from "react-icons";
 import { BiHash } from "react-icons/bi";
 import styled from "styled-components";
 
@@ -10,12 +9,12 @@ interface IProps {
 const HeaderBar: React.FC<IProps> = ({ name }) => {
   return (
     <HeaderBarContainerDiv>
-      <div className="chat-title">
-        <IconContext.Provider value={{ className: "chat-hashtag" }}>
+      <ChatTitleDiv>
+        <ChatHashtagDiv>
           <BiHash />
-        </IconContext.Provider>
-        <div className="text">{name}</div>
-      </div>
+        </ChatHashtagDiv>
+        <ChatTextDiv>{name}</ChatTextDiv>
+      </ChatTitleDiv>
     </HeaderBarContainerDiv>
   );
 };
@@ -26,6 +25,26 @@ const HeaderBarContainerDiv = styled.div`
     0 2px 0 rgba(4, 4, 5, 0.05);
   padding: 0 15px;
   display: flex;
+`;
+
+const ChatTitleDiv = styled.div`
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+`;
+
+const ChatHashtagDiv = styled.div`
+  display: inline;
+  font-size: 1.5rem;
+  color: grey;
+  padding: 0 10px 0 0;
+`;
+
+const ChatTextDiv = styled.div`
+  display: inline;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
 `;
 
 export default HeaderBar;
