@@ -1,3 +1,11 @@
+# Discord clone
+
+## 0. convensions
+
+### 0.1. styled-component
+
+- styled-component로 생성한 변수의 이름은 suffix로 tag 명을 붙여 PascalCase로 작성. (ex. MessageDiv, TitleH1 ...)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts

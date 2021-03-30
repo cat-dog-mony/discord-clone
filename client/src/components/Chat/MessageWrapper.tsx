@@ -2,11 +2,11 @@ import React from "react";
 import { BiUserCircle } from "react-icons/bi";
 import { MessageProps } from "../../models/Message";
 import MessageComponent from "./MessageComponent";
-import "./MessageWrapper.css";
+import styled from "styled-components";
 
 const MessageWrapper: React.FC<MessageProps> = ({ messages }: MessageProps) => {
   return (
-    <div className="message-wrapper">
+    <MessageWrapperDiv>
       <div className="scroller">
         {messages.map((msg) => {
           return (
@@ -21,8 +21,14 @@ const MessageWrapper: React.FC<MessageProps> = ({ messages }: MessageProps) => {
           );
         })}
       </div>
-    </div>
+    </MessageWrapperDiv>
   );
 };
+
+const MessageWrapperDiv = styled.div`
+  flex-grow: 100;
+  position: relative;
+  flex-shrink: 10;
+`;
 
 export default MessageWrapper;

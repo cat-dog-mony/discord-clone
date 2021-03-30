@@ -2,9 +2,9 @@ import React from "react";
 import HeaderBar from "./HeaderBar";
 import { Message } from "../../models/Message";
 import { User } from "../../models/User";
-import "./Chat.css";
 import InputWrapper from "./InputWrapper";
 import MessageWrapper from "./MessageWrapper";
+import styled from "styled-components";
 
 const CHAT_ENDPOINT = "http://localhost:5000/";
 let socket;
@@ -54,16 +54,29 @@ const room = {
 const Chat = () => {
   return (
     // TODO: move it to higher level of component
-    <div className="center-container">
-      <div className="container">
-        <HeaderBar name={room.name} />
-        <div className="chat-container">
-          <MessageWrapper messages={messages} />
-          <InputWrapper />
-        </div>
-      </div>
-    </div>
+    <CenterContainerDiv>
+      <HeaderBar name={room.name} />
+      <ChatContainerDiv>
+        <MessageWrapper messages={messages} />
+        <InputWrapper />
+      </ChatContainerDiv>
+    </CenterContainerDiv>
   );
 };
+
+const CenterContainerDiv = styled.div`
+  flex-grow: 1;
+  background-color: var(--chat-bg-color);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ChatContainerDiv = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+`;
 
 export default Chat;
