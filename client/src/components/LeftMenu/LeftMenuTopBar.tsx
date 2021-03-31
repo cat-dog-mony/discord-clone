@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { BiX, BiChevronDown } from "react-icons/bi";
+import ActionIcon from "../Common/TopBarMenuIcon";
 
 interface IProps {
   isShowPopup: boolean;
@@ -17,7 +17,9 @@ const LeftMenuTopBar: React.FC<IProps> = ({ isShowPopup, setIsShowPopup }) => {
   return (
     <LeftMenuTopBarContainer onClick={handleClickTitleMenu}>
       <TopBarTitle>Server Name</TopBarTitle>
-      <TopBarIcon>{isShowPopup ? <BiX /> : <BiChevronDown />}</TopBarIcon>
+      <TopBarIcon>
+        <ActionIcon down={isShowPopup} />
+      </TopBarIcon>
     </LeftMenuTopBarContainer>
   );
 };
