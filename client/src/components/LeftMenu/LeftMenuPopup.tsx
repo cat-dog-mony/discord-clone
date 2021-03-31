@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { BiUserPlus } from "react-icons/bi";
+import { UserPlus } from "@styled-icons/boxicons-regular";
 
 interface IProps {
   isShow: boolean;
@@ -14,19 +14,19 @@ const LeftMenuPopup: React.FC<IProps> = ({ isShow }) => {
         <PopUpItem>
           <PopUpItemLabel>초대하기</PopUpItemLabel>
           <PopUpItemIcon>
-            <BiUserPlus />
+            <UserPlus size="30" />
           </PopUpItemIcon>
         </PopUpItem>
         <PopUpItem>
           <PopUpItemLabel>채널 만들기</PopUpItemLabel>
           <PopUpItemIcon>
-            <BiUserPlus />
+            <UserPlus size="30" />
           </PopUpItemIcon>
         </PopUpItem>
         <PopUpItem>
           <PopUpItemLabel>서버 설정</PopUpItemLabel>
           <PopUpItemIcon>
-            <BiUserPlus />
+            <UserPlus size="30" />
           </PopUpItemIcon>
         </PopUpItem>
       </PopUpItemContainer>

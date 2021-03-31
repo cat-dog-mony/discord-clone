@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { BiCube, BiUserPlus, BiCog } from "react-icons/bi";
+import { Cube, UserPlus, Cog } from "@styled-icons/boxicons-regular";
 
 interface IProps {
   isSelected: boolean;
@@ -15,10 +15,10 @@ const Channel: React.FC<IProps> = ({ isSelected, name, onSelectChannel }) => {
       selected={isSelected}
       onClick={() => onSelectChannel(name)}
     >
-      <BiCube />
+      <Cube size="20" />
       <ChannelLabel>{name}</ChannelLabel>
-      <BiUserPlus />
-      <BiCog />
+      <UserPlus size="25" />
+      <Cog size="25" />
     </ChannelContainer>
   );
 };

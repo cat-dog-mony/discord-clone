@@ -1,6 +1,6 @@
 import React from "react";
-import { BiHash } from "react-icons/bi";
 import styled from "styled-components";
+import { Hashtag } from "@styled-icons/fa-solid";
 
 interface IProps {
   name: string;
@@ -10,9 +10,7 @@ const HeaderBar: React.FC<IProps> = ({ name }) => {
   return (
     <HeaderBarContainerDiv>
       <ChatTitleDiv>
-        <ChatHashtagDiv>
-          <BiHash />
-        </ChatHashtagDiv>
+        <HashTagIcon />
         <ChatTextDiv>{name}</ChatTextDiv>
       </ChatTitleDiv>
     </HeaderBarContainerDiv>
@@ -33,9 +31,9 @@ const ChatTitleDiv = styled.div`
   align-items: center;
 `;
 
-const ChatHashtagDiv = styled.div`
+const HashTagIcon = styled(Hashtag)`
   display: inline;
-  font-size: 1.5rem;
+  width: 15px;
   color: grey;
   padding: 0 10px 0 0;
 `;

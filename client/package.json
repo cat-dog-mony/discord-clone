@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -12,13 +11,12 @@
     "@types/react": "^16.14.5",
     "@types/react-dom": "^16.9.11",
     "@types/react-icons": "^3.0.0",
-    "@types/react-redux": "^7.1.16",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
-    "react-redux": "^7.2.2",
     "react-scripts": "4.0.3",
     "styled-components": "^5.2.1",
+    "styled-icons": "^10.31.0",
     "typescript": "^3.8.3"
   },
   "scripts": {

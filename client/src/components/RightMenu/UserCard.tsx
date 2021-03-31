@@ -1,7 +1,8 @@
 import React from "react";
 
-import { BiUserCircle, BiCrown } from "react-icons/bi";
 import { User } from "../../models/User";
+import { Crown, UserCircle } from "@styled-icons/boxicons-regular";
+import styled from "styled-components";
 
 import "./UserCard.css";
 
@@ -15,17 +16,25 @@ const UserCard: React.FC<IProps> = ({ online, user, owner }) => {
   return (
     <li className={`user-card ${!online ? "offline" : ""}`}>
       <div className="user-icon">
-        <BiUserCircle />
+        <UserCircleIcon />
         {online && <span className="online-circle" />}
       </div>
       <span className="user-name">{user.name}</span>
-      {owner && (
-        <span className="channel-owner-icon">
-          <BiCrown />
-        </span>
-      )}
+      {owner && <CrownIcon />}
     </li>
   );
 };
+
+const UserCircleIcon = styled(UserCircle)`
+  width: 40px;
+  position: relative;
+  color: white;
+  margin-right: 5px;
+`;
+
+const CrownIcon = styled(Crown)`
+  width: 25px;
+  color: yellow;
+`;
 
 export default UserCard;

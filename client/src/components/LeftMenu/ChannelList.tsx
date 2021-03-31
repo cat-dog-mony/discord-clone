@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { BiPlus, BiChevronRight } from "react-icons/bi";
+import { Plus } from "@styled-icons/bootstrap";
+import { ChevronRight } from "@styled-icons/boxicons-regular";
 import styled from "styled-components";
 
 import Channel from "./Channel";
@@ -35,11 +36,11 @@ const ChannelList = () => {
     <>
       <SectionHeader onClick={handleClickChannelSection}>
         <SectionExpandButton expand={isExpandChannels}>
-          <BiChevronRight />
+          <ChevronRight size="30" />
         </SectionExpandButton>
         <SectionLabel>채팅 채널</SectionLabel>
         <SectionChannelAddButton>
-          <BiPlus />
+          <Plus size="35" />
         </SectionChannelAddButton>
       </SectionHeader>
 

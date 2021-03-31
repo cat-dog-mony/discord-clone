@@ -1,8 +1,6 @@
 import React from "react";
-import { IconContext } from "react-icons";
-import { BiSmile } from "react-icons/bi";
+import { EmojiSmileFill } from "@styled-icons/bootstrap/EmojiSmileFill";
 import styled from "styled-components";
-import "./InputWrapper.css";
 
 const InputWrapper = () => {
   return (
@@ -12,11 +10,7 @@ const InputWrapper = () => {
           <TextWrapperDiv>
             <ChatInput placeholder="Message #general" />
           </TextWrapperDiv>
-          <EmojiWrapperDiv>
-            <IconContext.Provider value={{ className: "smile-emoji" }}>
-              <BiSmile />
-            </IconContext.Provider>
-          </EmojiWrapperDiv>
+          <EmojiSmileFillIcon />
         </InnerInput>
       </InputBoxDiv>
     </InputBoxWrapperDiv>
@@ -52,6 +46,12 @@ const InnerInput = styled.div`
   min-height: 2.5vh;
 `;
 
+const EmojiSmileFillIcon = styled(EmojiSmileFill)`
+  width: 20px;
+  color: #cfcfcf;
+  padding-right: 10px;
+`;
+
 const TextWrapperDiv = styled.div`
   vertical-align: middle;
   flex: 8;
@@ -72,10 +72,6 @@ const ChatInput = styled.input`
   &:focus {
     outline: none;
   }
-`;
-
-const EmojiWrapperDiv = styled.div`
-  flex: 1;
 `;
 
 export default InputWrapper;
