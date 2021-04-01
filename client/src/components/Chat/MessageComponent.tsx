@@ -1,5 +1,5 @@
 import React from "react";
-import { BiUserCircle } from "react-icons/bi";
+import { UserCircle } from "@styled-icons/boxicons-regular";
 import { Message } from "../../models/Message";
 import styled from "styled-components";
 
@@ -8,9 +8,7 @@ const MessageComponent: React.FC<Message> = (props: Message) => {
     <MessageWrapperDiv>
       {props.isFirst === true && (
         <>
-          <ProfileDiv>
-            <BiUserCircle />
-          </ProfileDiv>
+          <UserCircleIcon />
           <UserInfoDiv>
             <UserNameDiv>{props.user.name}</UserNameDiv>
             <DateInfoDiv>{props.timestamp}</DateInfoDiv>
@@ -21,6 +19,15 @@ const MessageComponent: React.FC<Message> = (props: Message) => {
     </MessageWrapperDiv>
   );
 };
+
+const UserCircleIcon = styled(UserCircle)`
+  width: 40px;
+  position: absolute;
+  left: 16px;
+  margin-top: calc(5px - 0.125rem);
+  border-radius: 50%;
+  cursor: pointer;
+`;
 
 const MessageWrapperDiv = styled.div`
   position: relative;

@@ -1,5 +1,4 @@
 import React from "react";
-import { BiUserCircle } from "react-icons/bi";
 import { MessageProps } from "../../models/Message";
 import MessageComponent from "./MessageComponent";
 import styled from "styled-components";
