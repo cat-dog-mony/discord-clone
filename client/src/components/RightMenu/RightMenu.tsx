@@ -1,7 +1,9 @@
 import React from "react";
-import UserList from "./UserCardList";
-import "./RightMenu.css";
-import { User } from "../../models/User";
+import UserCardList from "./UserCardList";
+
+import styled from "styled-components";
+
+import { User } from "models/User";
 
 const channelOwnerId = 1;
 
@@ -36,13 +38,37 @@ const RightMenu = () => {
   });
 
   return (
-    <div className="rightmenu">
-      <div className="user-list-label"> 온라인</div>
-      <UserList online={true} users={onlineUsers} ownerId={channelOwnerId} />
-      <div className="user-list-label"> 오프라인</div>
-      <UserList online={false} users={offlineUsers} ownerId={channelOwnerId} />
-    </div>
+    <RightMenuContainerDiv>
+      <UserSectionLabelDiv>온라인</UserSectionLabelDiv>
+      <UserCardList
+        online={true}
+        users={onlineUsers}
+        ownerId={channelOwnerId}
+      />
+      <UserSectionLabelDiv>오프라인</UserSectionLabelDiv>
+      <UserCardList
+        online={false}
+        users={offlineUsers}
+        ownerId={channelOwnerId}
+      />
+    </RightMenuContainerDiv>
   );
 };
+
+const RightMenuContainerDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  padding: 40px 10px;
+  background-color: var(--rightmenu-bg-color);
+`;
+
+const UserSectionLabelDiv = styled.div`
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin-left: 10px;
+`;
 
 export default RightMenu;
