@@ -10,13 +10,12 @@ const chatSchema = new Schema({
     required: true,
     ref: "User",
   },
-  room: {
+  channel: {
     type: ObjectId,
     required: true,
-    ref: "Room",
+    ref: "Channel",
   },
-  text: String,
-  image: String,
+  content: String,
   time: {
     type: Date,
     default: Date.now,
