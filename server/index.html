@@ -10,20 +10,10 @@
     <button class="btn">Join</button>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      var socket = io("/socket.io");
-      const joinBtn = document.querySelector(".btn");
-      console.log(joinBtn);
-      joinBtn.addEventListener("click", () => {
-        console.log("hello?");
-
-        socket.emit("join", {
-          channel: "60699555ab8ba655e04fe912",
-          user: "6066c4d1d5176e4c105d384c",
-        });
-      });
-
-      socket.on("message", (system) => {
-        console.log(system);
+      var socket = io();
+      socket.emit("test", "test data");
+      socket.on("chat", function(data) {
+        console.log(data);
       });
     </script>
   </body>

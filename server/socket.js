@@ -7,7 +7,15 @@ module.exports = (server, app) => {
   app.set("io", io);
 
   io.on("connection", (socket) => {
-    socket.on("join", async ({ channel }, callback) => {
+    socket.on("test", (data) => {
+      console.log(data)
+      io.emit('chat', data );
+    })
+    socket.on('chat', (data) => {
+      console.log(data)
+      socket.broadcast.emit('chat', 'test chat')
+    })
+    socket.on("join", async ({ joinData }, callback) => {
       try {
         const channelId = joinData.channel;
         const userId = joinData.user;
@@ -65,6 +73,5 @@ module.exports = (server, app) => {
     socket.on("disconnect", () => {
       console.log("클라이이언트 접속해제");
     });
-    callback();
   });
 };
