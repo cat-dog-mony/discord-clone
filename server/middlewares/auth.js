@@ -7,6 +7,7 @@ const auth = async (req, res, next) => {
     if (!user) {
       return res.json({ isAuth: false });
     }
+    user.password = null;
     req.user = user;
     next();
   } catch (error) {

@@ -5,12 +5,15 @@ const {
 } = Schema;
 
 const serverSchema = new Schema({
-  user: {
-    type: ObjectId,
-    required: true,
-    ref: "User",
-  },
-  name: { String, maxlegnth: 20 },
+  user: [
+    {
+      type: ObjectId,
+      required: true,
+      ref: "User",
+      unique: [true, "You already in the room"],
+    },
+  ],
+  name: { type: String, maxlegnth: 30 },
   invitationCode: String,
 });
 

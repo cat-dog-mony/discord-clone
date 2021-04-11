@@ -13,7 +13,7 @@ const userSchema = new Schema({
   email: {
     type: String,
     required: [true, "이메일이 입력되지 않았습니다. 이메일을 입력해주세요"],
-    unique: true, //왜 이건 동작안하지...
+    unique: true,
   },
   password: {
     type: String,
