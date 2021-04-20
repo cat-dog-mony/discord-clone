@@ -2,6 +2,7 @@ const SocketIo = require("socket.io");
 const Channel = require("./models/Channel");
 const Message = require("./models/Message");
 
+
 module.exports = (server) => {
   const io = SocketIo(server);
 
@@ -19,7 +20,7 @@ module.exports = (server) => {
         io.to(channel._id).emit("message", {
           user: "system",
           text: `앗! 야생의 ${channel.user._id}이(가) 나타났다!`,
-        });
+        }); 
         callback(channel);
       } catch (error) {
         callback(error);

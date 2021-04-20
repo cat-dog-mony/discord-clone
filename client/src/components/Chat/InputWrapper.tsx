@@ -1,14 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { EmojiSmileFill } from "@styled-icons/bootstrap/EmojiSmileFill";
 import styled from "styled-components";
 
-const InputWrapper = () => {
+interface IProp {
+  onSendMessage: (messageContent: string) => void;
+}
+
+const InputWrapper: React.FC<IProp> = ({ onSendMessage }) => {
+  const [content, setContent] = useState("");
+
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setContent(e.target.value);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" && content !== "") {
+      onSendMessage(content);
+      setContent("");
+    }
+  };
+
   return (
     <InputBoxWrapperDiv>
       <InputBoxDiv>
         <InnerInput>
           <TextWrapperDiv>
-            <ChatInput placeholder="Message #general" />
+            <ChatInput
+              placeholder="Message #general"
+              onChange={handleChangeInput}
+              value={content}
+              onKeyDown={handleKeyDown}
+            />
           </TextWrapperDiv>
           <EmojiSmileFillIcon />
         </InnerInput>
