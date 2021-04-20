@@ -11,10 +11,6 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var socket = io();
-      socket.emit("test", "test data");
-      socket.on("chat", function(data) {
-        console.log(data);
-      });
     </script>
   </body>
 </html>
