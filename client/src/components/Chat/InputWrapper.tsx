@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { EmojiSmileFill } from "@styled-icons/bootstrap/EmojiSmileFill";
 import styled from "styled-components";
 
@@ -23,49 +23,33 @@ const InputWrapper: React.FC<IProp> = ({ onSendMessage }) => {
   return (
     <InputBoxWrapperDiv>
       <InputBoxDiv>
-        <InnerInput>
-          <TextWrapperDiv>
-            <ChatInput
-              placeholder="Message #general"
-              onChange={handleChangeInput}
-              value={content}
-              onKeyDown={handleKeyDown}
-            />
-          </TextWrapperDiv>
-          <EmojiSmileFillIcon />
-        </InnerInput>
+        <TextWrapperDiv>
+          <ChatInput
+            placeholder="Message #general"
+            onChange={handleChangeInput}
+            value={content}
+            onKeyDown={handleKeyDown}
+          />
+        </TextWrapperDiv>
+        <EmojiSmileFillIcon />
       </InputBoxDiv>
     </InputBoxWrapperDiv>
   );
 };
 
 const InputBoxWrapperDiv = styled.div`
-  position: relative;
-  padding: 0 16px;
-  margin-top: -8px;
-  flex-grow: 1;
-  flex-shrink: 0;
-  padding-left: 16px;
-  padding-right: 16px;
+  height: 8%;
 `;
 
 const InputBoxDiv = styled.div`
-  margin-bottom: 24px;
-  background-color: var(--chat-bg-color);
-  border-radius: 8px;
-  width: 100%;
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: scroll;
-`;
-
-const InnerInput = styled.div`
   padding-left: 16px;
   display: flex;
   align-items: flex-center;
   position: relative;
   background-color: var(--chat-input-bg-color);
-  min-height: 2.5vh;
+  min-height: 70%;
+  border-radius: 5px;
+  margin: 0 15px;
 `;
 
 const EmojiSmileFillIcon = styled(EmojiSmileFill)`

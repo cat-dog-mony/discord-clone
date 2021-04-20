@@ -27,6 +27,10 @@ const Chat = () => {
 
     // join room
     socket.emit("join", { user, channel_id }, (data: any) => {});
+
+    return () => {
+      socket.close();
+    };
   }, []);
 
   const handleSendMessage = (messageContent: string) => {
@@ -68,10 +72,11 @@ const CenterContainerDiv = styled.div`
 `;
 
 const ChatContainerDiv = styled.div`
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
   position: relative;
+  display: flex;
+  height: 80%;
+  flex-grow: 1;
+  flex-direction: column;
 `;
 
 // dummy romm
@@ -85,35 +90,5 @@ const user: User = {
   name: "Test User1",
   online: true,
 };
-
-// dummy message
-const messages: Message[] = [
-  {
-    id: 1,
-    user: user,
-    content: "this is test message",
-    isFirst: true,
-    timestamp: "2021-03-27",
-  },
-  {
-    id: 2,
-    user: user,
-    content:
-      "this is test message. And Long message. kslnflnf sdnsdkl nsdafklsdakfl dffn",
-    isFirst: false,
-  },
-  {
-    id: 3,
-    user: user,
-    content: "this is test message 3",
-    isFirst: false,
-  },
-  {
-    id: 4,
-    user: user,
-    content: "this is test message 3 sklfdnsf sd from other user",
-    isFirst: false,
-  },
-];
 
 export default Chat;
