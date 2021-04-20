@@ -34,7 +34,7 @@ const ChannelContainer = styled.li`
   justify-content: space-between;
   align-items: center;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 5px 15px;
   padding: 10px 15px;
   border-radius: 6px;

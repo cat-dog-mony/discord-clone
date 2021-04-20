@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const axios = require("axios");
 
 const Server = require("../models/Server");
 const Channel = require("../models/Channel");
