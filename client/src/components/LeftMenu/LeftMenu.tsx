@@ -25,7 +25,7 @@ const LeftMenu = () => {
 const LeftMenuContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 300px;
   background-color: var(--leftmenu-bg-color);
 `;
 

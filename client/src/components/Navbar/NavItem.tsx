@@ -25,17 +25,16 @@ const NavItemContainer = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100px;
-  width: 100px;
+  align-items: center; 
+  padding: 10px;
 `;
 
 const SideEffectBar = styled.span`
   visibility: hidden;
   position: absolute;
   top: 50%;
-  left: -6px;
-  width: 6px;
+  left: -3px;
+  width: 3px;
   height: 0%;
   background-color: white;
   border-radius: 0 4px 4px 0;
@@ -44,7 +43,7 @@ const SideEffectBar = styled.span`
   ${NavItemContainer}:hover & {
     visibility: visible;
     top: 30%;
-    width: 12px;
+    width: 6px;
     height: 40%;
   }
 `;
@@ -56,8 +55,8 @@ const ServerItem = styled.div`
   align-items: center;
   font-size: 20px;
   font-weight: bold;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background-color: #414348;
   border-radius: 50%;
   transition: border-radius 0.2s ease-out, background-color 0.15s ease-out;
@@ -68,8 +67,8 @@ const ServerItem = styled.div`
 `;
 
 const ServerItemImage = styled.img`
-  width: 60px;
-  height: 60px;
+  width: 80%;
+  height: 80%;
 `;
 
 export default NavItem;

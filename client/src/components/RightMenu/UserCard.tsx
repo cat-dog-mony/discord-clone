@@ -72,7 +72,7 @@ const OnlineCircleSpan = styled.div`
 `;
 
 const UserNameLabelSpan = styled.span`
-  font-size: 1.2rem;
+  font-size: 1rem;
   opacity: 0.7;
   font-weight: bold;
   margin-right: 5px;
