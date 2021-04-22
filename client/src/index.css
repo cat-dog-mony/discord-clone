@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --border-color: gray;
+  --border: solid 0.1em var(--border-color);
+  --navbar-bg-color: #181a1c;
+  --leftmenu-bg-color: #232529;
+  --rightmenu-bg-color: var(--leftmenu-bg-color);
+  --chat-bg-color: #292b30;
+  --chat-input-bg-color: #40444b;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
